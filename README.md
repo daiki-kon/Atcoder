@@ -11,10 +11,10 @@ val = input()
 val = int(input())
 
 # 1行に複数の値がある時(スペース区切り)
-val1, val2 = input().split(' ')
+val1, val2 = input().split()
 
 # 1行に複数の値があり、intとして扱いたいとき(スペース区切り)
-val1, val2 = list(map(int,input().split(' ')))
+val1, val2 = list(map(int,input().split()))
 ```
 
 [参考](https://qiita.com/all/items/1f519aff0cdc3cf16284)
