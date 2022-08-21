@@ -1,5 +1,5 @@
 # For Atcoder
-Atcoderので使える入力とかPythonの機能のメモとか
+Atcoderので使える入力とかPython機能のメモとか
 
 ## 入力
 
@@ -33,3 +33,8 @@ print(all(elem <= 3 for elem in lst)) # => True
 
 
 ```
+
+## 少数を使わずに計算する
+https://blog.hamayanhamayan.com/entry/2020/03/08/100545
+> 最終的には小数点以下は切り捨てるし、小数を介するのは、誤差とかがちょっと怖い。
+なので、x8をして、100で割ることで整数上で正確に切り捨てを計算することができる。
