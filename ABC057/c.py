@@ -15,8 +15,6 @@ divisors = []
 for i in range(1, int(math.sqrt(N))+1):  
     if N % i == 0:
         divisors.append(i)
-        if i != N // i:  # iが平方根でない場合は、もう一方の約数も追加する
-            divisors.append(N // i)
 
 ketasuu = []
 for A in divisors:
