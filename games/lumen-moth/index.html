@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#071018" />
+  <title>LUMEN MOTH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Syne:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="game" aria-label="LUMEN MOTH game canvas"></canvas>
+
+    <header class="hud" id="hud" hidden>
+      <div class="hud-brand">LUMEN MOTH</div>
+      <div class="hud-stats">
+        <span class="stat"><em>SCORE</em> <strong id="score">0</strong></span>
+        <span class="stat"><em>COMBO</em> <strong id="combo">×1</strong></span>
+        <span class="stat"><em>BEST</em> <strong id="best">0</strong></span>
+      </div>
+    </header>
+
+    <section class="panel title-panel" id="title">
+      <div class="atmosphere" aria-hidden="true"></div>
+      <p class="eyebrow">night festival flight</p>
+      <h1>LUMEN MOTH</h1>
+      <p class="tagline">灯りの粒子を集め、炎を避けて、夜を泳ごう。</p>
+      <div class="cta-row">
+        <button type="button" class="btn primary" id="startBtn">飛ぶ</button>
+        <button type="button" class="btn ghost" id="howBtn">遊び方</button>
+      </div>
+      <p class="hint">マウス / タッチで導く · スペースで一時停止</p>
+    </section>
+
+    <section class="panel how-panel" id="how" hidden>
+      <h2>遊び方</h2>
+      <ul>
+        <li><strong>蛾</strong>はポインタを追って飛びます</li>
+        <li><strong>金色の花粉</strong>を集めてスコアアップ</li>
+        <li><strong>灯篭の光</strong>に入るとコンボが伸びます</li>
+        <li><strong>炎</strong>と<strong>強い風</strong>には注意</li>
+      </ul>
+      <button type="button" class="btn primary" id="howClose">戻る</button>
+    </section>
+
+    <section class="panel over-panel" id="over" hidden>
+      <p class="eyebrow">flight ended</p>
+      <h2>また夜が明ける</h2>
+      <p class="final-score">SCORE <strong id="finalScore">0</strong></p>
+      <p class="final-best" id="finalBestLine"></p>
+      <div class="cta-row">
+        <button type="button" class="btn primary" id="retryBtn">もう一度</button>
+        <button type="button" class="btn ghost" id="homeBtn">タイトルへ</button>
+      </div>
+    </section>
+
+    <div class="pause-badge" id="paused" hidden>PAUSE</div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
