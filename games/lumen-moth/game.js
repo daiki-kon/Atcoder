@@ -585,12 +585,15 @@
   }
 
   window.addEventListener("resize", resize);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", resize);
+  }
   window.addEventListener("mousemove", (e) => setPointer(e.clientX, e.clientY));
   window.addEventListener(
     "touchmove",
     (e) => {
       if (!e.touches[0]) return;
-      e.preventDefault();
+      if (mode === "playing" || mode === "paused") e.preventDefault();
       setPointer(e.touches[0].clientX, e.touches[0].clientY);
     },
     { passive: false }
@@ -599,9 +602,13 @@
     "touchstart",
     (e) => {
       if (!e.touches[0]) return;
+      // Keep button taps working; block scroll only while flying
+      if (!e.target.closest("button") && (mode === "playing" || mode === "paused")) {
+        e.preventDefault();
+      }
       setPointer(e.touches[0].clientX, e.touches[0].clientY);
     },
-    { passive: true }
+    { passive: false }
   );
 
   window.addEventListener("keydown", (e) => {

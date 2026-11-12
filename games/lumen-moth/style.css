@@ -27,8 +27,10 @@ body {
   color: var(--paper);
   font-family: var(--font-body);
   -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
   touch-action: none;
   user-select: none;
+  overscroll-behavior: none;
 }
 
 #app {
@@ -298,5 +300,12 @@ body {
 
   .btn {
     width: min(100%, 16rem);
+    min-height: 48px;
+    font-size: 1rem;
+  }
+
+  .hint {
+    font-size: 0.85rem;
+    padding: 0 0.5rem;
   }
 }
